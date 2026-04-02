@@ -3,14 +3,31 @@ import { GlobalContext } from "../context/GlobalState";
 import MovieCard from "./MovieCard";
 
 const Watched = () => {
-  const { watched } = useContext(GlobalContext);
+  const { watched, clearWatched } = useContext(GlobalContext);
   return (
     <div className="movie-page">
       <div className="container">
         <div className="header">
           <h1 className="heading">İzlenen Filmler</h1>
-          <div className="count-pill">
-            {watched.length} {watched.length < 2 ? "Movie" : "Movies"}
+          <div className="header-actions">
+            <div className="count-pill">
+              {watched.length} {watched.length < 2 ? "Film" : "Filmler"}
+            </div>
+            <button
+              className="clear-btn"
+              disabled={watched.length === 0}
+              onClick={() => {
+                if (
+                  window.confirm(
+                    "İzlenenler listenizi temizlemek istiyor musunuz?"
+                  )
+                ) {
+                  clearWatched();
+                }
+              }}
+            >
+              İzlenenleri Temizle
+            </button>
           </div>
         </div>
 

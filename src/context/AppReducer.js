@@ -33,6 +33,16 @@ export default (state, action) => {
         ...state,
         watched: state.watched.filter((movie) => movie.id !== action.payload),
       };
+    case "CLEAR_WATCHLIST":
+      return {
+        ...state,
+        watchlist: [],
+      };
+    case "CLEAR_WATCHED":
+      return {
+        ...state,
+        watched: [],
+      };
     default:
       return state;
   }

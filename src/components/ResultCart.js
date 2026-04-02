@@ -39,14 +39,14 @@ const ResultCart = ({ movie }) => {
             disabled={storedMovie}
             onClick={() => addMovieToWatchlist(movie)}
           >
-            Add to Watchlist
+            İzleme Listesine Ekle
           </button>
           <button
             className="btn"
             disabled={storedMovieWatched}
             onClick={() => addMovieToWatched(movie)}
           >
-            Add to Watched
+            İzlenenler Listesine Ekle
           </button>
         </div>
       </div>
